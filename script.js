@@ -4,6 +4,8 @@ import {wordsArray} from './data.js';
 
 let theWordOutput = document.getElementById("word");
 let inputFields = document.getElementsByClassName("inputs");
+let line = document.getElementById("first-line");
+let grid = document.getElementById("grid");
 let submitBtn = document.getElementById("submit");
 let output = document.getElementById("output");
 
@@ -42,19 +44,34 @@ function matchOrNot() {
     let trueFalse = [];
     for (let i = 0; i < inputArray.length; i++) {
         if (randomWord[i] == inputArray[i]) {
-            trueFalse.push("green");
             inputFields[i].style.background = "green";
+            inputFields[i].setAttribute('readonly', '');
         }
         else if (randomWord.includes(inputArray[i])) {
-            trueFalse.push("yellow");
             inputFields[i].style.background = "yellow";
+            inputFields[i].setAttribute('readonly', '');
         }
         else {
-            trueFalse.push("grey");
             inputFields[i].style.background = "grey";
+            inputFields[i].setAttribute('readonly', '');
         }
     }
-    console.log(trueFalse);
+    addNewLine();
+}
+
+//Add a clone line after submit
+
+function addNewLine() {
+    let idNr = 1;
+    let cloneLine = line.cloneNode(true);
+    cloneLine.id = `line-${idNr + 1}`;
+    grid.appendChild(cloneLine);
+    for (let i = 0; i < cloneLine.children.length; i++) {
+        cloneLine.children[i].value = "";
+        cloneLine.children[i].style.background = "";
+        cloneLine.children[i].removeAttribute('readonly', '');
+      }
+    idNr += 1;
 }
 
 submitBtn.addEventListener("click", matchOrNot)
