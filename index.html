@@ -10,7 +10,20 @@
 </head>
 
 <body>
+    <h1>Wordle</h1>
 
+    <p id="word"></p>
+    <section id="grid">
+        <div id="first-line">
+            <input type="text" maxlength="1" pattern="[a-zA-Z]" class="inputs">
+            <input type="text" maxlength="1" pattern="[a-zA-Z]" class="inputs">
+            <input type="text" maxlength="1" pattern="[a-zA-Z]" class="inputs">
+            <input type="text" maxlength="1" pattern="[a-zA-Z]" class="inputs">
+            <input type="text" maxlength="1" pattern="[a-zA-Z]" class="inputs">
+        </div>
+        <input type="button" value="Submit" id="submit">
+        <p id="output"></p>
+    </section>
 
     <script type="module" src="script.js"></script>
 </body>
