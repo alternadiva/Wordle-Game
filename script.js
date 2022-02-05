@@ -55,6 +55,8 @@ function addNewRow() {
 
 submitBtn.addEventListener("click", addNewRow);
 
+let activeRow = document.getElementsByClassName("active");
+
 // Focus on next input field on key up
 
 function jumpNextField() {
