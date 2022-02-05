@@ -3,11 +3,8 @@ import {wordsArray} from './data.js';
 // DOM
 
 let theWordOutput = document.getElementById("word");
-let inputFields = document.getElementsByClassName("inputs");
-let line = document.getElementById("first-line");
 let grid = document.getElementById("grid");
 let submitBtn = document.getElementById("submit");
-let output = document.getElementById("output");
 
 // Random string from the array on load event
 
@@ -22,6 +19,32 @@ function selectWord() {
 }
 
 window.addEventListener("load", selectWord);
+
+
+// Create grid rows dinamically
+
+let inputFields = [];
+
+let idNum = 1;
+
+function addRow() {
+    let row = document.createElement("div");
+    row.classList.add("row", "active");
+    row.setAttribute("id", `row-${idNum}`);
+    for (let i = 0; i < 5; i++) {
+        let input = document.createElement("input");
+        input.setAttribute("type", "text");
+        input.setAttribute("maxlength", "1");
+        input.setAttribute("id", `input-${i+1}`);
+        input.classList.add("inputformat");
+        inputFields.push(input.value);
+        row.appendChild(input);
+    }
+    grid.appendChild(row);
+    idNum++;
+}
+
+addRow();
 
 // Focus on next input field on key up
 
@@ -86,6 +109,7 @@ function addNewLine() {
         cloneLine.children[i].removeAttribute('readonly', '');
       }
     idNr += 1;
+
 }
 
 submitBtn.addEventListener("click", matchOrNot);

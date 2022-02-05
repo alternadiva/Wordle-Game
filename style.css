@@ -14,7 +14,7 @@ body {
   border-radius: 10px;
 }
 
-.lines {
+.row {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 5px;
