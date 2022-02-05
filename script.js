@@ -46,6 +46,15 @@ function addRow() {
 
 addRow();
 
+// Add new rows
+
+function addNewRow() {
+    addRow();
+    document.getElementById(`row-${idNum-2}`).classList.remove("active");
+}
+
+submitBtn.addEventListener("click", addNewRow);
+
 // Focus on next input field on key up
 
 function jumpNextField() {
@@ -72,7 +81,7 @@ function addInputValues() {
     return inputArray;
 }
 
-submitBtn.addEventListener("click", addInputValues)
+submitBtn.addEventListener("click", addInputValues);
 
 
 // Iterate through inputs and compare with letters
