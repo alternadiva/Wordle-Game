@@ -15,13 +15,26 @@ let randomWord = [];
 
 function selectWord() {
     let pickedWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
-    theWordOutput.innerText = pickedWord;
+    theWordOutput.innerText = pickedWord; //Remove later
     randomWord = pickedWord.split("");
     console.log(randomWord); //Remove later
     return randomWord;
 }
 
 window.addEventListener("load", selectWord);
+
+// Focus on next input field on key up
+
+function jumpNextField() {
+    inputFields[0].focus();
+    for (let i = 0; i < inputFields.length - 1; i++) {
+        inputFields[i].addEventListener("keyup", function() {
+            this.nextSibling.nextSibling.focus();
+        }
+    )}
+}
+
+jumpNextField();
 
 // Get input array
 
@@ -31,6 +44,7 @@ function addInputValues() {
     for (let i = 0; i < inputFields.length; i++) {
         let inputValue = inputFields[i].value;
         inputArray.push(inputValue.toUpperCase());
+        
     }
     return inputArray;
 }
@@ -74,4 +88,6 @@ function addNewLine() {
     idNr += 1;
 }
 
-submitBtn.addEventListener("click", matchOrNot)
+submitBtn.addEventListener("click", matchOrNot);
+
+//Generate keyboard and render to DOM
