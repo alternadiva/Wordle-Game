@@ -18,7 +18,6 @@ body {
   display: inline-grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 5px;
-  row-gap: 5px;
 }
 
 .inputformat {
