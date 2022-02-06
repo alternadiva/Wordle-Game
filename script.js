@@ -36,7 +36,6 @@ function addRow() {
         input.setAttribute("maxlength", "1");
         input.setAttribute("id", `input-${i+1}`);
         input.classList.add("inputformat");
-        //inputFields.push(input.value);
         row.appendChild(input);
     }
     grid.appendChild(row);
@@ -48,7 +47,7 @@ function addRow() {
 
 addRow();
 
-// Focus on next input field on key up
+// Focus on next input field on key up and submit on return
 
 function jumpNextField() {
     inputFields[0].focus();
@@ -57,6 +56,12 @@ function jumpNextField() {
             this.nextSibling.focus();
         }
     )}
+
+    inputFields[4].addEventListener("keyup", function(event) {
+        if (event.keyCode === 13) {
+            submitButtonFuncs();
+        }
+    });
 }
 
 jumpNextField();
