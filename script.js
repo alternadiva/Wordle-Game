@@ -71,12 +71,8 @@ function addInputValues() {
         let inputValue = inputFields[i].value;
         inputArray.push(inputValue.toUpperCase());
     }
-    console.log(inputArray);
     return inputArray;
 }
-
-submitBtn.addEventListener("click", addInputValues);
-
 
 // Iterate through inputs and compare with letters
 
@@ -106,11 +102,14 @@ function addNewRow() {
     activeRow = document.querySelector(".active");
     inputFields = activeRow.children;
     inputArray = [];
-    console.log(inputFields);
-
 }
 
-submitBtn.addEventListener("click", matchOrNot);
-submitBtn.addEventListener("click", addNewRow); 
+function submitButtonFuncs() {
+    addInputValues();
+    matchOrNot();
+    addNewRow();
+}
+
+submitBtn.addEventListener("click", submitButtonFuncs);
 
 //Generate keyboard and render to DOM 
