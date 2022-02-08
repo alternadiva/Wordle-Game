@@ -1,6 +1,25 @@
+html {
+  font-family: "Poppins", sans-serif;
+  color: rgb(80, 80, 80);
+}
+
 body {
   background-color: rgb(234, 234, 255);
   text-align: center;
+}
+
+#title {
+  letter-spacing: 5px;
+}
+
+#header-line {
+  width: 450px;
+  border: 0.5px solid rgb(216, 216, 216);
+}
+
+#word {
+  letter-spacing: 2px;
+  font-weight: 400;
 }
 
 #grid {
@@ -10,7 +29,7 @@ body {
   width: 320px;
   height: 400px;
   padding: 20px;
-  border: 1px solid rgb(175, 175, 175);
+  border: 2px solid rgb(216, 216, 216);
   border-radius: 10px;
 }
 
@@ -23,8 +42,32 @@ body {
 .inputformat {
   width: 50px;
   height: 50px;
+  margin-bottom: 5px;
   font-size: 1.5rem;
+  font-weight: 600;
   text-align: center;
   text-transform: uppercase;
+  color: rgb(80, 80, 80);
+  border: 2px solid rgb(175, 175, 175);
   border-radius: 5px;
+  outline: none;
+}
+
+.inputformat:focus {
+  border: 2px solid rgb(80, 80, 80);
+  outline: none;
+}
+
+#submit {
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+  color: rgb(234, 234, 255);
+  background-color: rgb(175, 175, 175);
+  border: 2px solid rgb(175, 175, 175);
+  letter-spacing: 1.5px;
+  border-radius: 5px;
+  cursor: pointer;
 }

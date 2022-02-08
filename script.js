@@ -12,7 +12,7 @@ let randomWord = [];
 
 function selectWord() {
     let pickedWord = wordsArray[Math.floor(Math.random() * wordsArray.length)];
-    theWordOutput.innerText = pickedWord; //Remove later
+    theWordOutput.innerText = `Target word: \n ${pickedWord}`; //Remove later
     randomWord = pickedWord.split("");
     console.log(randomWord); //Remove later
     return randomWord;
@@ -35,6 +35,7 @@ function addRow() {
         input.setAttribute("type", "text");
         input.setAttribute("maxlength", "1");
         input.setAttribute("id", `input-${i+1}`);
+        input.setAttribute("name", `input-${i+1}`);
         input.classList.add("inputformat");
         row.appendChild(input);
     }
@@ -51,8 +52,14 @@ addRow();
 
 function jumpNextField() {
     inputFields[0].focus();
-    for (let i = 0; i < inputFields.length - 1; i++) {
+    for (let i = 0; i < inputFields.length-1; i++) {
         inputFields[i].addEventListener("keyup", function() {
+            if (this.value.length < 1) {
+                this.style.border = ""
+            }
+            else {
+                this.style.border = "2px solid rgb(80, 80, 80)"
+            }
             this.nextSibling.focus();
         }
     )}
@@ -82,20 +89,21 @@ function addInputValues() {
 // Iterate through inputs and compare with letters
 
 function matchOrNot() {
-    
     for (let i = 0; i < inputArray.length; i++) {
         if (randomWord[i] == inputArray[i]) {
             inputFields[i].style.background = "green";
-            inputFields[i].setAttribute("readonly", "");
+            inputFields[i].style.border = "2px solid green";
         }
         else if (randomWord.includes(inputArray[i])) {
             inputFields[i].style.background = "yellow";
-            inputFields[i].setAttribute("readonly", "");
+            inputFields[i].style.border = "2px solid yellow";
         }
         else {
             inputFields[i].style.background = "grey";
-            inputFields[i].setAttribute("readonly", "");
+            inputFields[i].style.border = "2px solid grey";
         }
+        inputFields[i].style.color = "white";
+        inputFields[i].setAttribute("readonly", "");
     }
 } 
 
