@@ -12,6 +12,12 @@ This is a solution for the following user story:
 - [ ] Limit guesses to six
 - [x] Style the UI
 
+<div align="center">
+
+![UI](https://user-images.githubusercontent.com/85565743/152959268-d4a9aeef-c890-47bf-a5c0-1927443c2c95.png)
+
+ </div>
+
 --------
 
 ### 1️⃣ Steps towards the solution
