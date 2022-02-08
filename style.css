@@ -1,10 +1,19 @@
+:root {
+  --ligt-blue: rgb(244, 244, 255);
+  --dark-grey: rgb(80, 80, 80);
+  --light-grey: rgb(216, 216, 216);
+  --medium-grey: rgb(139, 139, 139);
+  --yellow: rgb(219, 217, 63);
+  --green: rgb(100, 199, 90);
+}
+
 html {
   font-family: "Poppins", sans-serif;
-  color: rgb(80, 80, 80);
+  color: var(--dark-grey);
 }
 
 body {
-  background-color: rgb(234, 234, 255);
+  background-color: var(--ligt-blue);
   text-align: center;
 }
 
@@ -14,7 +23,7 @@ body {
 
 #header-line {
   width: 450px;
-  border: 0.5px solid rgb(216, 216, 216);
+  border: 0.5px solid var(--light-grey);
 }
 
 #word {
@@ -29,7 +38,7 @@ body {
   width: 320px;
   height: 400px;
   padding: 20px;
-  border: 2px solid rgb(216, 216, 216);
+  border: 2px solid var(--light-grey);
   border-radius: 10px;
 }
 
@@ -47,14 +56,14 @@ body {
   font-weight: 600;
   text-align: center;
   text-transform: uppercase;
-  color: rgb(80, 80, 80);
-  border: 2px solid rgb(175, 175, 175);
+  color: var(--dark-grey);
+  border: 2px solid var(--medium-grey);
   border-radius: 5px;
   outline: none;
 }
 
 .inputformat:focus {
-  border: 2px solid rgb(80, 80, 80);
+  border: 2px solid var(--dark-grey);
   outline: none;
 }
 
@@ -64,9 +73,9 @@ body {
   margin-top: 20px;
   font-family: "Poppins", sans-serif;
   font-weight: 600;
-  color: rgb(234, 234, 255);
-  background-color: rgb(175, 175, 175);
-  border: 2px solid rgb(175, 175, 175);
+  color: var(--ligt-blue);
+  background-color: var(--medium-grey);
+  border: 2px solid var(--medium-grey);
   letter-spacing: 1.5px;
   border-radius: 5px;
   cursor: pointer;

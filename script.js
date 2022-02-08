@@ -58,7 +58,7 @@ function jumpNextField() {
                 this.style.border = ""
             }
             else {
-                this.style.border = "2px solid rgb(80, 80, 80)"
+                this.style.border = "2px solid var(--dark-grey)"
             }
             this.nextSibling.focus();
         }
@@ -91,18 +91,18 @@ function addInputValues() {
 function matchOrNot() {
     for (let i = 0; i < inputArray.length; i++) {
         if (randomWord[i] == inputArray[i]) {
-            inputFields[i].style.background = "green";
-            inputFields[i].style.border = "2px solid green";
+            inputFields[i].style.background = "var(--green)";
+            inputFields[i].style.border = "2px solid var(--green)";
         }
         else if (randomWord.includes(inputArray[i])) {
-            inputFields[i].style.background = "yellow";
-            inputFields[i].style.border = "2px solid yellow";
+            inputFields[i].style.background = "var(--yellow)";
+            inputFields[i].style.border = "2px solid var(--yellow)";
         }
         else {
-            inputFields[i].style.background = "grey";
-            inputFields[i].style.border = "2px solid grey";
+            inputFields[i].style.background = "var(--medium-grey)";
+            inputFields[i].style.border = "2px solid var(--medium-grey)";
         }
-        inputFields[i].style.color = "white";
+        inputFields[i].style.color = "var(--ligt-blue)";
         inputFields[i].setAttribute("readonly", "");
     }
 } 
