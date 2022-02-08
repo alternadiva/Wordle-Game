@@ -10,7 +10,7 @@ This is a solution for the following user story:
 - [x] If the letter is in the word, but in incorrect position ➡️ yellow background
 - [x] If the letter is incorrect ➡️ grey background
 - [ ] Limit guesses to six
-- [ ] Style the UI
+- [x] Style the UI
 
 --------
 
